@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNB HealthRun 2026 – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    #hero {
+      padding-top: 60px;
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-inner {
+      width: 100%; max-width: 1280px;
+      margin: 0 auto; padding: 40px 40px 48px;
+    }
+    .hero-banner-img {
+      width: 100%; border-radius: 18px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.55);
+      display: block; line-height: 0;
+    }
+    .hero-banner-img img {
+      width: 100%; height: auto; display: block; border-radius: 18px;
+    }
+    @media(max-width:1024px){ .hero-inner { padding: 28px 18px 36px; } }
+    @media(max-width:640px){  .hero-inner { padding: 20px 12px 28px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">PNB <span>HealthRun.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="jersey.html">Jersey</a></li>
+    <li><a href="route.html">Route</a></li>
+    <li><a href="price.html">Price</a></li>
+    <li><a href="ticket.html">Ticket</a></li>
+    <li><a href="venue.html">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav">Buy Ticket</a>
+  <button class="ham" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob" id="mob">
+  <ul>
+    <li><a href="index.html"  onclick="closeMob()">Home</a></li>
+    <li><a href="about.html"  onclick="closeMob()">About</a></li>
+    <li><a href="jersey.html" onclick="closeMob()">Jersey</a></li>
+    <li><a href="route.html"  onclick="closeMob()">Route</a></li>
+    <li><a href="price.html"  onclick="closeMob()">Price</a></li>
+    <li><a href="ticket.html" onclick="closeMob()">Ticket</a></li>
+    <li><a href="venue.html"  onclick="closeMob()">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav" onclick="closeMob()">Buy Ticket</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-banner-img">
+      <img src="hero-banner.png" alt="PNB HealthRun 2026 – Bergerak Bersama Menuju Generasi Aktif dan Produktif"/>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>PNB HealthRun</strong>. All Rights Reserved. |
+    <a href="https://www.pnb.ac.id" target="_blank">Politeknik Negeri Bali</a>
+  </p>
+</footer>
+
+<script>
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+  window.addEventListener('scroll', () => document.getElementById('mob').classList.remove('open'));
+</script>
+</body>
+</html>

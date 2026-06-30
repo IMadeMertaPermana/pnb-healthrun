@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNB HealthRun 2026 – Ticket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    #ticket { background: #fff; padding-top: 136px; }
+
+    .ticket-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; margin-top: 8px;
+    }
+    .ticket-box {
+      background: #fff; border: 1.5px solid #dde3ee;
+      border-radius: 12px; padding: 26px 28px 22px;
+    }
+    .ticket-box h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem; font-weight: 800; color: var(--navy);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .ticket-box ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .ticket-box ul li {
+      font-size: .86rem; color: #555; line-height: 1.55;
+      padding-left: 18px; position: relative;
+    }
+    .ticket-box ul li::before {
+      content: '•'; position: absolute; left: 0;
+      color: var(--sky); font-weight: 900;
+    }
+
+    .ticket-cta { text-align: center; margin-top: 36px; }
+    .btn-buy {
+      display: inline-block; background: var(--sky); color: #fff;
+      text-decoration: none; padding: 13px 48px; border-radius: 8px;
+      font-family: 'Barlow', sans-serif; font-weight: 800; font-size: .95rem;
+      transition: background .2s, transform .15s;
+    }
+    .btn-buy:hover { background: #0288d1; transform: translateY(-2px); }
+
+    @media(max-width:640px){ .ticket-wrap{ grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">PNB <span>HealthRun.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="jersey.html">Jersey</a></li>
+    <li><a href="route.html">Route</a></li>
+    <li><a href="price.html">Price</a></li>
+    <li><a href="ticket.html" class="active">Ticket</a></li>
+    <li><a href="venue.html">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav">Buy Ticket</a>
+  <button class="ham" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob" id="mob">
+  <ul>
+    <li><a href="index.html"  onclick="closeMob()">Home</a></li>
+    <li><a href="about.html"  onclick="closeMob()">About</a></li>
+    <li><a href="jersey.html" onclick="closeMob()">Jersey</a></li>
+    <li><a href="route.html"  onclick="closeMob()">Route</a></li>
+    <li><a href="price.html"  onclick="closeMob()">Price</a></li>
+    <li><a href="ticket.html" onclick="closeMob()">Ticket</a></li>
+    <li><a href="venue.html"  onclick="closeMob()">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav" onclick="closeMob()">Buy Ticket</a>
+</div>
+
+<!-- TICKET -->
+<section id="ticket">
+  <div class="container reveal">
+    <div class="text-center">
+      <span class="sec-eyebrow">Ticket</span>
+      <h2 class="sec-title">Dapatkan <span>Ticket</span> anda</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="ticket-wrap">
+      <div class="ticket-box">
+        <h3>Syarat dan Ketentuan</h3>
+        <ul>
+          <li>Tiket yang sudah dibeli tidak bisa dipindahtangankan, ditukar, atau diuangkan kembali.</li>
+          <li>Pendaftar bersedia mengikuti seluruh rangkaian acara dari awal hingga akhir.</li>
+          <li>Jika peserta adalah anak-anak, wajib mengisi form pernyataan orang tua/wali.</li>
+          <li>Peserta wajib memakai jersey resmi saat berlari.</li>
+          <li>Dilarang keras memotong rute lomba dan akan langsung didiskualifikasi.</li>
+          <li>Peserta dengan kondisi kesehatan khusus wajib membawa obat pribadi.</li>
+        </ul>
+      </div>
+      <div class="ticket-box">
+        <h3>Informasi Race Pack</h3>
+        <ul>
+          <li>Setiap peserta mendapatkan Race Pack: Jersey, BIB Number, Medali Finisher &amp; Free Produk Sponsor.</li>
+          <li>Pengambilan race pack dilakukan H-2 dan H-1 sebelum acara.</li>
+          <li>Tunjukkan kode QR registrasi tiket saat pengambilan race pack.</li>
+          <li>Jadwal dan lokasi pengambilan akan diumumkan segera.</li>
+          <li>Race pack tidak dapat diambil pada hari-H pelaksanaan.</li>
+          <li>Dapat diwakilkan dengan surat kuasa bermaterai dari peserta.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ticket-cta">
+      <a href="https://www.pnb.ac.id/healthrun2026" target="_blank" class="btn-buy">Buy Ticket</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>PNB HealthRun</strong>. All Rights Reserved. |
+    <a href="https://www.pnb.ac.id" target="_blank">Politeknik Negeri Bali</a>
+  </p>
+</footer>
+
+<script>
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+  window.addEventListener('scroll', () => document.getElementById('mob').classList.remove('open'));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+</body>
+</html>

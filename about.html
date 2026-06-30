@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNB HealthRun 2026 – About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body { margin: 0; padding: 0; }
+
+    #about {
+      padding-top: 60px !important;
+      padding-bottom: 0 !important;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Background foto pelari */
+    .about-bg {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .about-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('about-bg.png') center center / cover no-repeat;
+      z-index: 0;
+    }
+    .about-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 31, 68, .82) 0%,
+        rgba(10, 31, 68, .58) 50%,
+        rgba(10, 31, 68, .82) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Konten */
+    .about-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Label */
+    .sec-eyebrow {
+      display: block;
+      color: var(--gold);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    /* Judul */
+    .sec-title {
+      max-width: 1000px;
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .sec-title span { color: var(--gold); }
+
+    /* Garis */
+    .sec-divider {
+      width: 70px;
+      height: 4px;
+      margin: 22px auto 30px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+    }
+
+    /* Isi paragraf */
+    .about-body {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+    .about-body p {
+      color: rgba(255,255,255,.92);
+      font-size: .95rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .about-body strong { color: var(--gold2); }
+
+    /* Tombol CTA */
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      font-size: .9rem;
+      transition: background .2s, transform .15s;
+    }
+    .about-cta:hover {
+      background: var(--gold2);
+      transform: translateY(-3px);
+    }
+
+    /* Responsive */
+    @media(max-height: 760px) {
+      .about-body p { font-size: .86rem; line-height: 1.6; margin-bottom: 12px; }
+      .sec-title { font-size: clamp(1.6rem, 2.6vw, 2.3rem); }
+      .about-content { padding: 24px 40px; }
+    }
+
+    @media(max-width: 768px) {
+      .about-content { padding: 30px 20px; }
+      .sec-title { font-size: 2rem; }
+      .about-body p { font-size: .9rem; line-height: 1.7; }
+      .about-bg::after { background: rgba(10,31,68,.82); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">PNB <span>HealthRun.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="jersey.html">Jersey</a></li>
+    <li><a href="route.html">Route</a></li>
+    <li><a href="price.html">Price</a></li>
+    <li><a href="ticket.html">Ticket</a></li>
+    <li><a href="venue.html">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav">Buy Ticket</a>
+  <button class="ham" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob" id="mob">
+  <ul>
+    <li><a href="index.html"  onclick="closeMob()">Home</a></li>
+    <li><a href="about.html"  onclick="closeMob()">About</a></li>
+    <li><a href="jersey.html" onclick="closeMob()">Jersey</a></li>
+    <li><a href="route.html"  onclick="closeMob()">Route</a></li>
+    <li><a href="price.html"  onclick="closeMob()">Price</a></li>
+    <li><a href="ticket.html" onclick="closeMob()">Ticket</a></li>
+    <li><a href="venue.html"  onclick="closeMob()">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav" onclick="closeMob()">Buy Ticket</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-bg">
+    <div class="about-content reveal">
+
+      <span class="sec-eyebrow">PNB HEALTH RUN 2026</span>
+
+      <h2 class="sec-title">
+        Lari Sehat,
+        <span>Bergerak Bersama Menuju Generasi</span>
+        Aktif dan Produktif
+      </h2>
+
+      <div class="sec-divider"></div>
+
+      <div class="about-body">
+        <p>
+          Selamat datang di <strong>PNB Health Run 2026</strong> – ajang lari sehat yang
+          diselenggarakan oleh Politeknik Negeri Bali sebagai wujud mengajak
+          sivitas akademika dan masyarakat mencapai gaya hidup sehat,
+          aktif, dan penuh semangat.
+        </p>
+        <p>
+          PNB Health Run 2026 hadir sebagai perpaduan antara olahraga,
+          kebersamaan, dan semangat hidup sehat. Kegiatan ini dirancang
+          untuk memberikan pengalaman berlari yang menyenangkan sambil
+          menikmati suasana kampus yang asri serta semangat positif
+          dari para peserta.
+        </p>
+        <p>
+          Lebih dari sekadar berlari, acara ini menjadi momentum untuk
+          mempererat kebersamaan antar mahasiswa, dosen, tenaga
+          kependidikan, alumni, dan masyarakat umum sekitar kampus.
+          Dengan berbagai kategori lari, aktivitas kesehatan, hiburan
+          menarik, dan pameran sponsor, PNB Health Run 2026 siap
+          menghadirkan pengalaman yang berkesan bagi seluruh peserta.
+        </p>
+        <p>
+          Mari menjadi bagian dari gerakan hidup sehat bersama PNB.
+          Ajak teman dan komunitas Anda untuk berlari, berbagi semangat,
+          dan menciptakan kenangan terbaik di
+          <strong>PNB Health Run 2026!</strong>
+        </p>
+      </div>
+
+      <a href="ticket.html" class="about-cta">
+        Daftar Sekarang &rarr;
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>PNB HealthRun</strong>. All Rights Reserved. |
+    <a href="https://www.pnb.ac.id" target="_blank">Politeknik Negeri Bali</a>
+  </p>
+</footer>
+
+<script>
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+  window.addEventListener('scroll', () => document.getElementById('mob').classList.remove('open'));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+</body>
+</html>

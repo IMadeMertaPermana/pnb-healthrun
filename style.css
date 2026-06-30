@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════
+   PNB HealthRun 2026 — Global Styles
+   ═══════════════════════════════════════ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:   #0a1f44;
+  --navy2:  #0d2c5e;
+  --blue:   #1565c0;
+  --sky:    #29b6f6;
+  --gold:   #f5a800;
+  --gold2:  #ffd54f;
+  --white:  #ffffff;
+  --gray:   #f5f7fa;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Barlow', sans-serif;
+  color: #333;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--navy);
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.35);
+}
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem; font-weight: 800;
+  color: #fff; text-decoration: none;
+}
+.logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex; align-items: center; gap: 28px; list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,.85); text-decoration: none;
+  font-size: .88rem; font-weight: 600; letter-spacing: .2px;
+  transition: color .2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+
+.btn-nav {
+  background: var(--sky); color: #fff; border: none;
+  border-radius: 5px; padding: 8px 20px;
+  font-family: 'Barlow', sans-serif; font-weight: 700; font-size: .88rem;
+  cursor: pointer; text-decoration: none;
+  transition: background .2s; white-space: nowrap;
+}
+.btn-nav:hover { background: #0288d1; }
+
+/* Hamburger */
+.ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.ham span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+/* Mobile menu */
+.mob {
+  display: none; position: fixed; top: 60px; left: 0; right: 0;
+  background: var(--navy); padding: 16px 24px 20px; z-index: 199;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.mob.open { display: block; }
+.mob ul { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
+.mob ul a { color: #fff; text-decoration: none; font-size: .95rem; font-weight: 600; }
+.mob .btn-nav { display: block; text-align: center; }
+
+/* ── SECTION BASE ── */
+section { padding: 76px 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+.sec-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .8rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--sky);
+  margin-bottom: 6px; display: block;
+}
+.sec-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900; text-transform: uppercase;
+  line-height: 1.05; margin-bottom: 6px;
+}
+.sec-title span { color: var(--gold); }
+.sec-divider {
+  width: 52px; height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--sky));
+  border-radius: 2px; margin-bottom: 32px;
+}
+.text-center { text-align: center; }
+.text-center .sec-divider { margin-left: auto; margin-right: auto; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 40px;
+  text-align: center; color: rgba(255,255,255,.5); font-size: .82rem;
+}
+footer strong { color: #fff; }
+footer a { color: var(--gold); text-decoration: none; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE NAV ── */
+@media(max-width:1024px){
+  nav { padding: 0 20px; }
+  .nav-links, .btn-nav { display: none; }
+  .ham { display: flex; }
+  .container { padding: 0 24px; }
+}
+@media(max-width:640px){
+  section { padding: 52px 0; }
+  .container { padding: 0 18px; }
+}

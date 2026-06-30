@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNB HealthRun 2026 – Venue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    #venue { background: var(--gray); padding-top: 136px; }
+
+    .venue-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 36px; align-items: start; margin-top: 8px;
+    }
+    .venue-map-box {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 6px 22px rgba(0,0,0,.12);
+    }
+    .venue-map-box iframe { width: 100%; height: 340px; border: none; display: block; }
+
+    .venue-info-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      border: 1.5px solid #dde3ee; border-radius: 12px;
+      overflow: hidden; background: #fff;
+    }
+    .venue-col { padding: 18px 16px; border-right: 1px solid #e8ecf4; }
+    .venue-col:last-child { border-right: none; }
+    .venue-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .84rem; font-weight: 800; color: var(--navy);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 8px; padding-bottom: 6px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .venue-col p, .venue-col a {
+      font-size: .8rem; color: #555; line-height: 1.65; display: block; text-decoration: none;
+    }
+    .venue-col a { color: var(--blue); font-weight: 600; }
+    .venue-col a:hover { color: var(--gold); }
+
+    .soc-links { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+    .soc-link {
+      display: flex; align-items: center; gap: 7px;
+      font-size: .8rem; color: var(--blue); text-decoration: none;
+      font-weight: 600; transition: color .2s;
+    }
+    .soc-link:hover { color: var(--gold); }
+
+    @media(max-width:1024px){ .venue-grid{ grid-template-columns: 1fr; } }
+    @media(max-width:640px){
+      .venue-info-grid{ grid-template-columns: 1fr; }
+      .venue-col{ border-right: none; border-bottom: 1px solid #e8ecf4; }
+      .venue-col:last-child{ border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="logo">PNB <span>HealthRun.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="jersey.html">Jersey</a></li>
+    <li><a href="route.html">Route</a></li>
+    <li><a href="price.html">Price</a></li>
+    <li><a href="ticket.html">Ticket</a></li>
+    <li><a href="venue.html" class="active">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav">Buy Ticket</a>
+  <button class="ham" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob" id="mob">
+  <ul>
+    <li><a href="index.html"  onclick="closeMob()">Home</a></li>
+    <li><a href="about.html"  onclick="closeMob()">About</a></li>
+    <li><a href="jersey.html" onclick="closeMob()">Jersey</a></li>
+    <li><a href="route.html"  onclick="closeMob()">Route</a></li>
+    <li><a href="price.html"  onclick="closeMob()">Price</a></li>
+    <li><a href="ticket.html" onclick="closeMob()">Ticket</a></li>
+    <li><a href="venue.html"  onclick="closeMob()">Venue</a></li>
+  </ul>
+  <a href="ticket.html" class="btn-nav" onclick="closeMob()">Buy Ticket</a>
+</div>
+
+<!-- VENUE -->
+<section id="venue">
+  <div class="container reveal">
+    <div class="text-center">
+      <span class="sec-eyebrow">Info Detail</span>
+      <h2 class="sec-title">Venue <span>Information</span></h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="venue-grid">
+      <div class="venue-map-box">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.865627039915!2d115.15991207359943!3d-8.798692689953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd244c13ee9d753%3A0x6c05042449b50f81!2sPoliteknik%20Negeri%20Bali!5e0!3m2!1sid!2sid!4v1782810416026!5m2!1sid!2sid"
+          allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Peta Venue">
+        </iframe>
+      </div>
+      <div>
+        <div class="venue-info-grid">
+          <div class="venue-col">
+            <h4>Address</h4>
+            <p>Politeknik Negeri Bali</p>
+            <p>Kawasan Bukit Jimbaran, Kuta Sel., Kab. Badung, Bali 80364</p>
+          </div>
+          <div class="venue-col">
+            <h4>Contact</h4>
+            <a href="tel:+6282326032387">0823-2603-2387</a>
+            <a href="mailto:healthrun@pnb.ac.id" style="margin-top:4px">healthrun@pnb.ac.id</a>
+            <a href="https://wa.me/6282326032387" target="_blank" style="margin-top:4px">WhatsApp</a>
+          </div>
+          <div class="venue-col">
+            <h4>Follow Us</h4>
+            <div class="soc-links">
+              <a href="https://instagram.com/pnbhealthrun" target="_blank" class="soc-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                @pnbhealthrun
+              </a>
+              <a href="#" target="_blank" class="soc-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                PNB HealthRun
+              </a>
+              <a href="#" target="_blank" class="soc-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+                PNB HealthRun
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>PNB HealthRun</strong>. All Rights Reserved. |
+    <a href="https://www.pnb.ac.id" target="_blank">Politeknik Negeri Bali</a>
+  </p>
+</footer>
+
+<script>
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+  window.addEventListener('scroll', () => document.getElementById('mob').classList.remove('open'));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
